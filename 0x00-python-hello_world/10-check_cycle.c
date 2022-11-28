@@ -7,8 +7,12 @@
 */
 int check_cycle(listint_t *list)
 {
-	listint_t *ptr = list, *ptr2 = list;
+	listint_t *ptr, *ptr2;
 
+	if (!list)
+		return (0);
+	ptr = list;
+	ptr2 = list;
 	while (ptr)
 	{
 		while (ptr2)
