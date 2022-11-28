@@ -12,9 +12,9 @@ int check_cycle(listint_t *list)
 	if (!list || !list->next)
 		return (0);
 	ptr = list;
-	ptr2 = list->next;
 	while (ptr)
 	{
+		ptr2 = ptr->next;
 		while (ptr2)
 		{
 			if (ptr2 == ptr)
