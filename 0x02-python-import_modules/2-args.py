@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-import sys
+if __name__ == '__main__':
+    import sys
 argv = sys.argv
 argc = len(argv)
 if argc < 2:
