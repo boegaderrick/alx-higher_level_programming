@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-ALPHABET = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ']
-print(ALPHABET[0])
+a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+print('{:d}'.format(ord(a)))
