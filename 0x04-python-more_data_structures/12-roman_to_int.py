@@ -6,8 +6,8 @@ def roman_to_int(roman_string):
     if length < 1:
         return decimal
     num = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-    for x in roman_string:
-        if x not in list(num):
+#    for x in roman_string:
+#        if x not in list(num):
 #            return decimal
     while i < length:
         rom = roman_string[i]
