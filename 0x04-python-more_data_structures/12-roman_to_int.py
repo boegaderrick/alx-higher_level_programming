@@ -2,6 +2,8 @@
 def roman_to_int(roman_string):
     decimal = 0
     i = 0
+    if not isinstance(roman_string, str):
+        return decimal
     length = len(roman_string) if roman_string else 0
     if length < 1:
         return decimal
