@@ -3,7 +3,17 @@ def safe_function(fct, *args):
     import sys
     try:
         result = fct(args[0], args[1])
-    except Exception as e:
+    except ValueError as v:
         result = None
-        print("Exception: " + str(e), file=sys.stderr)
+        print("Exception: " + str(v), file=sys.stderr)
+    except TypeError as t:
+        result = None
+        print("Exception: " + str(t), file=sys.stderr)
+    except ZeroDivisionError as z:
+        result = None
+        print("Exception: " + str(z), file=sys.stderr)
+    except IndexError as i:
+        result = None
+        print("Exception: " + str(i), file=sys.stderr)
+
     return result
