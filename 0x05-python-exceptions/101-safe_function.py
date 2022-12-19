@@ -1,22 +1,16 @@
 #!/usr/bin/python3
 def safe_function(fct, *args):
     import sys
+    argv = []
     try:
-        result = fct(args[0], args[1])
-    except ValueError as v:
+        for a in range(2):
+            try:
+                argv.append(args[a])
+            except IndexError as i:
+                print("Exception: " + str(i), file=sys.stderr)
+                return None
+        result = fct(argv[0], argv[1])
+    except Exception as e:
         result = None
-        print("Exception: " + str(v), file=sys.stderr)
-    except TypeError as t:
-        result = None
-        print("Exception: " + str(t), file=sys.stderr)
-    except ZeroDivisionError as z:
-        result = None
-        print("Exception: " + str(z), file=sys.stderr)
-    except IndexError as i:
-        result = None
-        print("Exception: " + str(i), file=sys.stderr)
-    except NameError as n:
-        result = None
-        print("Exception: " + str(n), file=sys.stderr)
-
+        print("Exception: " + str(e), file=sys.stderr)
     return result
