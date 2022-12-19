@@ -6,7 +6,7 @@ def safe_function(fct, *args):
         for a in range(2):
             try:
                 argv.append(args[a])
-            except IndexError as i:
+            except Exception as i:
                 print("Exception: " + str(i), file=sys.stderr)
                 return None
         result = fct(argv[0], argv[1])
