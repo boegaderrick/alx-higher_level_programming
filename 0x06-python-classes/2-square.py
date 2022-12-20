@@ -3,7 +3,11 @@
 
 
 class Square:
-    """initializes Square object"""
+    """initializes Square object
+        size: size of side
+        ValueError: exception indicating size is not of expected value
+        TypeError: exception indicating size is not of expected type
+    """
     def __init__(self, size=0):
         if isinstance(size, int):
             if size >= 0:
