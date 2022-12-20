@@ -4,7 +4,9 @@
 
 class Square:
     """initializes Square object
+    Args:
         size: size of side
+    Exceptions:
         ValueError: exception indicating size is not of expected value
         TypeError: exception indicating size is not of expected type
     """
