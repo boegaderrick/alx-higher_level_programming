@@ -63,7 +63,7 @@ class SinglyLinkedList:
         if temp.data and temp.data > value:
             new.next_node = self.__head
             self.__head = new
-            return self.__head
+            return
         while temp.next_node:
             prev = temp
             temp = temp.next_node
