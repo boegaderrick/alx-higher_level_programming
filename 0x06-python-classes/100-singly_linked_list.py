@@ -41,11 +41,11 @@ class SinglyLinkedList:
 
     """list initialization"""
     def __init__(self):
-        self.head = None
+        self.__head = None
 
     """magic method that returns contents of linked list object as a string"""
     def __str__(self):
-        temp = self.head
+        temp = self.__head
         node_string = ''
         while (temp):
             s = (str(temp.data) + '\n') if temp.next_node else str(temp.data)
@@ -55,15 +55,15 @@ class SinglyLinkedList:
 
     """adds node in sorted order"""
     def sorted_insert(self, value):
-        temp = self.head
+        temp = self.__head
         new = Node(value)
-        if not self.head:
-            self.head = new
+        if not self.__head:
+            self.__head = new
             return
         if temp.data and temp.data > value:
-            new.next_node = self.head
-            self.head = new
-            return self.head
+            new.next_node = self.__head
+            self.__head = new
+            return self.__head
         while temp.next_node:
             prev = temp
             temp = temp.next_node
