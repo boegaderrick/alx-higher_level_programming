@@ -4,7 +4,7 @@
 
 class Node:
     """node object initialization"""
-    def __init__(self, data=None, next_node=None):
+    def __init__(self, data, next_node=None):
         self.__data = data
         self.__next_node = next_node
 
