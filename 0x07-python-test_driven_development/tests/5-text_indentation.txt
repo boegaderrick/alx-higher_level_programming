@@ -1,0 +1,73 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+------------------------------------------------------
+>>> text_indentation(3)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+------------------------------------------------------
+>>> text_indentation("Hello, how are you? Pick one: Mango or Apple.")
+Hello, how are you?
+<BLANKLINE>
+Pick one:
+<BLANKLINE>
+Mango or Apple.
+
+------------------------------------------------------
+>>> text_indentation("    Hello, how are you? Pick one: Mango or Apple.")
+Hello, how are you?
+<BLANKLINE>
+Pick one:
+<BLANKLINE>
+Mango or Apple.
+
+------------------------------------------------------
+>>> text_indentation("     Hello, how are you?        Pick one:     Mango or Apple.")
+Hello, how are you?
+<BLANKLINE>
+Pick one:
+<BLANKLINE>
+Mango or Apple.
+
+------------------------------------------------------
+>>> text_indentation("Hello, how are you? Pick one: Mango or Apple. ")
+Hello, how are you?
+<BLANKLINE>
+Pick one:
+<BLANKLINE>
+Mango or Apple.
+<BLANKLINE>
+
+------------------------------------------------------
+>>> text_indentation("Hello, how are you? Pick one: Mango or Apple       ") # doctest: +REPORT_NDIFF
+Hello, how are you?
+<BLANKLINE>
+Pick one:
+<BLANKLINE>
+Mango or Apple
+
+------------------------------------------------------
+>>> text_indentation("Hello, how are you? Pick one: Mango or Apple")
+Hello, how are you?
+<BLANKLINE>
+Pick one:
+<BLANKLINE>
+Mango or Apple
+
+------------------------------------------------------
+>>> text_indentation("     Hello,     how     are     you?     Pick     one: Mango or Apple")
+Hello,     how     are     you?
+<BLANKLINE>
+Pick     one:
+<BLANKLINE>
+Mango or Apple
+
+------------------------------------------------------
+>>> text_indentation("")
+
+------------------------------------------------------
+>>> text_indentation(' ')
+
+------------------------------------------------------
+
