@@ -21,7 +21,7 @@ def checks():
 
 def nqueens(x):
     """ Finds all possible safe queen positioning on an NxN
-        chessboard using backtracking using backtracking
+        chessboard using backtracking
     """
     if x == n:
         print(indices)
@@ -32,12 +32,14 @@ def nqueens(x):
         columns.add(i)
         diag1.add(x + i)
         diag2.add(x - i)
-        indices.append(['{:d}, {:d}'.format(x, i)])
+#        indices.append(['{:d}, {:d}'.format(x, i)])
+        indices.append([x, i])
         nqueens(x + 1)
         columns.remove(i)
         diag1.remove(x + i)
         diag2.remove(x - i)
-        indices.remove(['{:d}, {:d}'.format(x, i)])
+#        indices.remove(['{:d}, {:d}'.format(x, i)])
+        indices.remove([x, i])
 
 
 if __name__ == '__main__':
