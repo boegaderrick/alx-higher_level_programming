@@ -2,23 +2,21 @@
 """N queens puzzle"""
 import sys
 
-if len(sys.argv) != 2:
-    print('Usage: nqueens N')
-    sys.exit(1)
 
-try:
-    n = int(sys.argv[1])
-except ValueError:
-    print('N must be a number')
-    sys.exit(1)
-if n < 4:
-    print('N must be at least 4')
-    sys.exit(1)
+def checks():
+    """Performs checks on the user input"""
+    if len(sys.argv) != 2:
+        print('Usage: nqueens N')
+        sys.exit(1)
 
-indices = []
-columns = set()
-diag1 = set()
-diag2 = set()
+    try:
+        n = int(sys.argv[1])
+    except ValueError:
+        print('N must be a number')
+        sys.exit(1)
+    if n < 4:
+        print('N must be at least 4')
+        sys.exit(1)
 
 
 def nqueens(x):
@@ -42,4 +40,11 @@ def nqueens(x):
         indices.remove(['{:d}, {:d}'.format(x, i)])
 
 
-nqueens(0)
+if __name__ == '__main__':
+    checks()
+    indices = []
+    columns = set()
+    diag1 = set()
+    diag2 = set()
+    n = int(sys.argv[1])
+    nqueens(0)
