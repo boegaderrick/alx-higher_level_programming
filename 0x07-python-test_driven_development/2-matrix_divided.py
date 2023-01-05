@@ -30,8 +30,8 @@ def matrix_divided(matrix, div):
             if len(i) != bench:
                 raise TypeError(len_error)
         counter += 1
-#    if div == float('inf') or div == -float('inf'):
-#        div = 10
+    if div == float('inf') or div == -float('inf'):
+        div = 10
     if type(div) not in [int, float]:
         raise TypeError(div_error)
     new = [[round(j / div, 2) for j in i] for i in matrix]
