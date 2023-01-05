@@ -14,6 +14,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([98, 58, 25*10]), 250)
         self.assertEqual(max_integer([54]), 54)
         self.assertEqual(max_integer([62, 62]), 62)
+        self.assertEqual(max_integer([99, 23, 21]), 99)
 
     def test_None_return(self):
         """method checks whether funtion returns None when necessary"""
