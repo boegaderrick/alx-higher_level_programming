@@ -1,0 +1,142 @@
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul([[]]))
+Traceback (most recent call last):
+	...
+TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul())
+Traceback (most recent call last):
+	...
+TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul((), ()))
+Traceback (most recent call last):
+	...
+TypeError: m_a must be a list
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul([[]], ()))
+Traceback (most recent call last):
+	...
+TypeError: m_b must be a list
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul([()], [[]]))
+Traceback (most recent call last):
+	...
+TypeError: m_a must be a list of lists
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul([[]], [()]))
+Traceback (most recent call last):
+	...
+TypeError: m_b must be a list of lists
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul([], []))
+Traceback (most recent call last):
+	...
+ValueError: m_a can't be empty
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul([[]], []))
+Traceback (most recent call last):
+	...
+ValueError: m_a can't be empty
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul([[1, 2]], []))
+Traceback (most recent call last):
+	...
+ValueError: m_b can't be empty
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul([[1, 2]], [[]]))
+Traceback (most recent call last):
+	...
+ValueError: m_b can't be empty
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul([[1, 1], ['string', 2]], [[1, 2]]))
+Traceback (most recent call last):
+	...
+TypeError: m_a should contain only integers or floats
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul([[1, 2]], [['string', 2]]))
+Traceback (most recent call last):
+	...
+TypeError: m_b should contain only integers or floats
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul([[1, 2, 3], [1, 2]], [[1, 2]]))
+Traceback (most recent call last):
+	...
+TypeError: each row of m_a must be of the same size
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul([[1, 2, 3], [1, 2, 3]], [[1, 2], [1, 2, 3]]))
+Traceback (most recent call last):
+	...
+TypeError: each row of m_b must be of the same size
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul([
+...		[1, 2, 3], 
+...		[1, 2, 3]
+...	], [
+...		[1, 2, 3], 
+...		[1, 2, 3]
+...	]))
+Traceback (most recent call last):
+	...
+ValueError: m_a and m_b can't be multiplied
+
+---------------------------------------------------------
+
+---------------------------------------------------------
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul([[9, 8], [7, 6], [5, 4]], [[1, 2, 3], [4, 5, 6]]))
+[[41 58 75]
+ [31 44 57]
+ [21 30 39]]
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul([[54, 67, 89], [89, 56, 4], [65, 76, 87]], 
+...	[[47, 85, 99], [34, 2, 6], [87, 76, 8]]))
+[[12559 11488  6460]
+ [ 6435  7981  9179]
+ [13208 12289  7587]]
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+[[ 7 10]
+ [15 22]]
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
+[[13 16]]
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul([[3, 4], [7, 2], [5, 9]], [[3, 1, 5], [6, 9, 7]]))
+[[33 39 43]
+ [33 25 49]
+ [69 86 88]]
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul([[3, 1, 4]], [[4, 3], [2, 5], [6, 8]]))
+[[38 46]]
+
+---------------------------------------------------------
+>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[5, 6], [0, 7]]))
+[[ 5 20]
+ [15 46]]
+
+---------------------------------------------------------
+
