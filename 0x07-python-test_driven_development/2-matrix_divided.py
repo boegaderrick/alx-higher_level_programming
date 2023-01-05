@@ -34,7 +34,5 @@ def matrix_divided(matrix, div):
         div = 10
     if type(div) not in [int, float]:
         raise TypeError(div_error)
-    if div == 0:
-        raise ZeroDivisionError('division by zero')
     new = [[round(j / div, 2) for j in i] for i in matrix]
     return new
