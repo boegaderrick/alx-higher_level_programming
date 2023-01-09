@@ -4,9 +4,9 @@
 
 class BaseGeometry:
     """Base geometry class"""
-    """def __init__(self):"""
-    """Class instance instantiation"""
-    """pass"""
+    def __init__(self):
+        """Class instance instantiation"""
+        pass
 
     def area(self):
         """Calculates area"""
