@@ -1,0 +1,46 @@
+>>> MyList = __import__('1-my_list').MyList
+>>> mylist = MyList()
+
+-------------------------------------------
+>>> mylist.append(1)
+>>> print(mylist)
+[1]
+
+-------------------------------------------
+>>> mylist.extend([7, 5, 8, 0])
+>>> print(mylist)
+[1, 7, 5, 8, 0]
+
+-------------------------------------------
+>>> mylist.print_sorted()
+[0, 1, 5, 7, 8]
+
+-------------------------------------------
+>>> print(mylist)
+[1, 7, 5, 8, 0]
+
+-------------------------------------------
+>>> print(dir(mylist))
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'print_sorted', 'remove', 'reverse', 'sort']
+
+-------------------------------------------
+>>> mylist.sort()
+>>> print(mylist)
+[0, 1, 5, 7, 8]
+
+-------------------------------------------
+>>> mylist.reverse()
+>>> print(mylist)
+[8, 7, 5, 1, 0]
+
+-------------------------------------------
+>>> mylist = mylist[:-1]
+>>> print(mylist)
+[8, 7, 5, 1]
+
+-------------------------------------------
+>>> mylist = mylist[1:-2]
+>>> print(mylist)
+[7]
+
+-------------------------------------------
