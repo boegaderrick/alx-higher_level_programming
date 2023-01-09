@@ -45,7 +45,7 @@ class Rectangle(BaseGeometry):
 class Square(Rectangle):
     """Square class derived from Rectangle and BaseGeometry classes"""
     def __init__(self, size):
-        super(Rectangle, self).integer_validator("size", size)
+        """super(Rectangle, self).integer_validator("size", size)"""
         super().__init__(size, size)
 
     def area(self):
