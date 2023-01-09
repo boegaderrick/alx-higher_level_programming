@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module contains function that checks parent class of an object"""
+"""Module contains function that checks type or parent class of an object"""
 
 
 def is_kind_of_class(obj, a_class):
