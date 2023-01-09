@@ -6,7 +6,7 @@ class BaseGeometry:
     """Base geometry class"""
     def __init__(self):
         """Class instance instantiation"""
-        pass
+        #pass
 
     def area(self):
         """Calculates area"""
@@ -25,7 +25,7 @@ class Rectangle(BaseGeometry):
 
     def __init__(self, width, height):
         """Rectangle class object instantiation"""
-        BaseGeometry.integer_validator("width", width)
-        BaseGeometry.integer_validator("height", height)
+        super().integer_validator("width", width)
+        super().integer_validator("height", height)
         self.__width = width
         self.__height = height
