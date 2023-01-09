@@ -39,13 +39,13 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """Returns a string implementation of the object fields"""
-        return f'[Rectangle] {self.__width}/{self.__height}'
+        return f'[{type(self).__name__}] {self.__width}/{self.__height}'
 
 
 class Square(Rectangle):
     """Square class derived from Rectangle and BaseGeometry classes"""
     def __init__(self, size):
-        """super(Rectangle, self).integer_validator("size", size)"""
+        super(Rectangle, self).integer_validator("size", size)
         super().__init__(size, size)
 
     def area(self):
