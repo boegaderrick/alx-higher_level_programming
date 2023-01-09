@@ -1,9 +1,17 @@
 #!/usr/bin/python3
-BaseGeometry = __import__('5-base_geometry').BaseGeometry
+Rectangle = __import__('8-rectangle').Rectangle
 
-bg = BaseGeometry()
+r = Rectangle(3, 5)
 
-print(bg)
-print(dir(bg))
-print(dir(BaseGeometry))
+print(r)
+print(dir(r))
 
+try:
+    print("Rectangle: {} - {}".format(r.width, r.height))
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+
+try:
+    r2 = Rectangle(4, True)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
