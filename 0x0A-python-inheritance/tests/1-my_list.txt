@@ -2,6 +2,18 @@
 >>> mylist = MyList()
 
 -------------------------------------------
+>>> print(issubclass(type(mylist), list))
+True
+
+-------------------------------------------
+>>> print(isinstance(mylist, list))
+True
+
+-------------------------------------------
+>>> print(type(mylist))
+<class '1-my_list.MyList'>
+
+-------------------------------------------
 >>> mylist.append(1)
 >>> print(mylist)
 [1]
