@@ -14,6 +14,6 @@ class Student:
         """ Returns object __dict__ if attrs is None. If attrs is list
             of strings, only attributes specified in attrs are returned
         """
-        if type(attrs) is list and all(isinstance(x, str) for x in attrs): 
+        if type(attrs) is list and all(isinstance(x, str) for x in attrs):
             return {i: j for i, j in self.__dict__.items() if i in attrs}
         return self.__dict__
