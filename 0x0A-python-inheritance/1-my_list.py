@@ -11,10 +11,13 @@ class MyList(list):
 
     def print_sorted(self):
         """Prints all contents of the derived class in sorted order"""
-        string = self.__str__()
+        st = self.__str__()
         lst = []
-        for i in string:
-            if i.isnumeric():
-                lst.append(int(i))
+        for i in range(len(st)):
+            if st[i].isnumeric():
+                if st[i - 1] == '-':
+                    lst.append(int(st[i]) * -1)
+                else:
+                    lst.append(int(st[i]))
         lst.sort()
         print((lst))
