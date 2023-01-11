@@ -1,6 +1,9 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> base = BaseGeometry()
 
+>>> isinstance(base, BaseGeometry)
+True
+
 ------------------------------------------------------------
 >>> base.area()
 Traceback (most recent call last):
@@ -15,6 +18,42 @@ Exception: area() is not implemented
 Traceback (most recent call last):
 	...
 TypeError: j must be an integer
+
+------------------------------------------------------------
+>>> base.integer_validator('j', (5,))
+Traceback (most recent call last):
+	...
+TypeError: j must be an integer
+
+------------------------------------------------------------
+>>> base.integer_validator('j', [2])
+Traceback (most recent call last):
+	...
+TypeError: j must be an integer
+
+------------------------------------------------------------
+>>> base.integer_validator('j', True)
+Traceback (most recent call last):
+	...
+TypeError: j must be an integer
+
+------------------------------------------------------------
+>>> base.integer_validator('j', {3, 7})
+Traceback (most recent call last):
+	...
+TypeError: j must be an integer
+
+------------------------------------------------------------
+>>> base.integer_validator('j', None)
+Traceback (most recent call last):
+	...
+TypeError: j must be an integer
+
+------------------------------------------------------------
+>>> base.integer_validator('j', 0)
+Traceback (most recent call last):
+	...
+ValueError: j must be greater than 0
 
 ------------------------------------------------------------
 >>> base.integer_validator('j', -1)
