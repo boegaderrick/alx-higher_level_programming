@@ -8,4 +8,6 @@ def add_attribute(obj, attr, value):
     for i in imms:
         if type(obj) is i or isinstance(obj, i) or issubclass(type(obj), i):
             raise TypeError('can\'t add new attribute')
+    if attr not in obj.__slots__:
+        raise TypeError('can\'t add new attribute')
     setattr(obj, attr, value)
