@@ -20,4 +20,7 @@ class MyList(list):
                 else:
                     lst.append(int(st[i]))
         lst.sort()
-        print((lst))
+        for i in lst:
+            print(i)
+        print('\n')
+        #print((lst))
