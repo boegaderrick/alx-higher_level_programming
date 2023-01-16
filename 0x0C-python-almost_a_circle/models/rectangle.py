@@ -26,7 +26,8 @@ class Rectangle(Base):
 
     def __setattr__(self, attr, value):
         """Validates value passed to setattr function before assignment"""
-        self.validate_attr(attr, value)
+        if attr != 'id':
+            self.validate_attr(attr, value)
         super().__setattr__(attr, value)
 
     def update(self, *args, **kwargs):
