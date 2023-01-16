@@ -6,7 +6,7 @@ from models.base import Base
 
 class TestModels(unittest.TestCase):
     """Unittest TestCase subclass"""
-    def test_id_assign(self):
+    def test_1_id_assign(self):
         """Method validates ID attribute assignment"""
         b = Base()
         self.assertEqual(b.id, 1)

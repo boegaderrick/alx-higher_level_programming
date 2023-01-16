@@ -2,6 +2,7 @@
 """Unittest for Rectangle class"""
 import unittest
 import io
+import os
 from unittest.mock import patch
 from models.rectangle import Rectangle
 
@@ -91,6 +92,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.__str__(), '[Rectangle] (101) 0/0 - 99/88')
 
     def test_7_update(self):
+        """Checks class update method"""
         r = Rectangle(9, 23, 5, 7, 88)
         r.update(987)
         self.assertEqual(r.id, 987)
@@ -103,6 +105,61 @@ class TestRectangle(unittest.TestCase):
         r.update(y=565, id = 287)
         self.assertEqual(r.id, 287)
         self.assertEqual(r.y, 565)
+
+    def test_8__dict__(self):
+        """Unittest for class to_dictionary method"""
+        r = Rectangle(32, 45, 23, 88, 901)
+        self.assertEqual(r.to_dictionary(), {'x': 23, 'y': 88, 'id': 901, 
+                                            'height': 45, 'width': 32})
+
+    def test_9_serialization(self):
+        """Unit test for object json representation"""
+        r = Rectangle(8, 3, 5, 2, 101)
+        d = r.to_dictionary()
+        jsn = Rectangle.to_json_string([d])
+        self.assertTrue(type(jsn) is str)
+        self.assertEqual(jsn, '[{"x": 5, "y": 2, "id": 101, "height": 3, "width": 8}]')
+        jsn = Rectangle.to_json_string(None)
+        self.assertEqual(jsn, '[]')
+        jsn = Rectangle.to_json_string([])
+        self.assertEqual(jsn, '[]')
+
+    def test_10_json_file(self):
+        """Test for json file creation"""
+        r = Rectangle(8, 3, 5, 2, 101)
+        Rectangle.save_to_file([r])
+        with open('Rectangle.json', mode='r', encoding='utf=8') as file:
+            content = file.read()
+        self.assertEqual(content, '[{"x": 5, "y": 2, "id": 101, "height": 3, "width": 8}]')
+        os.remove('Rectangle.json')
+
+        Rectangle.save_to_file([])
+        with open('Rectangle.json', mode='r', encoding='utf=8') as file:
+            content = file.read()
+        self.assertEqual(content, '[]')
+        os.remove('Rectangle.json')
+
+        Rectangle.save_to_file(None)
+        with open('Rectangle.json', mode='r', encoding='utf=8') as file:
+            content = file.read()
+        self.assertEqual(content, '[]')
+        os.remove('Rectangle.json')
+
+    def test_11_json_to_dict(self):
+        """Tests json deserialization"""
+        r = Rectangle(8, 3, 5, 2, 101)
+        json_str = Rectangle.to_json_string([r.to_dictionary()])
+        lst = Rectangle.from_json_string(json_str)
+        self.assertEqual(lst, [{"x": 5, "y": 2, "id": 101, "height": 3, "width": 8}])
+        lst = Rectangle.from_json_string('[]')
+        self.assertEqual(lst, [])
+        lst = Rectangle.from_json_string(None)
+        self.assertEqual(lst, [])
+
+
+
+
+
 
 
 if __name__ == '__main__':

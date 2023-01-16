@@ -16,6 +16,19 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
+    def to_dictionary(self):
+        """Returns dictionary containing attribute/value pairs"""
+        dictionary = {
+                'x': self.x, 'y': self.y, 'id': self.id,
+                'height': self.height, 'width': self.width
+                }
+        return dictionary
+
+    def __setattr__(self, attr, value):
+        """Validates value passed to setattr function before assignment"""
+        self.validate_attr(attr, value)
+        super().__setattr__(attr, value)
+
     def update(self, *args, **kwargs):
         """Updates attributes by order using *args/**kwargs"""
         if len(args) < 1:
@@ -55,9 +68,11 @@ class Rectangle(Base):
     def area(self):
         """Method calculates and returns the area of a rectangle instance"""
         return self.__width * self.__height
-    
+
     def validate_attr(self, attr, value):
         """Validates all passed attribute values"""
+        if attr == 'size':
+            attr = 'width'
         if type(value) is not int:
             raise TypeError(f'{attr} must be an integer')
         if (attr == 'x' or attr == 'y') and value < 0:
