@@ -57,7 +57,8 @@ class TestSquare(unittest.TestCase):
     def test_6__dict__(self):
         """Unittest for class to_dictionary method"""
         s = Square(32, 23, 88, 901)
-        self.assertEqual(s.to_dictionary(), {'id': 901, 'x': 23, 'size': 32, 'y': 88})
+        self.assertEqual(s.to_dictionary(), {
+                    'id': 901, 'x': 23, 'size': 32, 'y': 88})
 
     def test_7_serialization(self):
         """Test conversion to json"""
@@ -102,8 +103,6 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(lst, [])
         lst = Square.from_json_string(None)
         self.assertEqual(lst, [])
-
-
 
 
 if __name__ == '__main__':
