@@ -12,9 +12,9 @@ class TestRectangle(unittest.TestCase):
 
     def test_1_values(self):
         """Method checks if values reflect as assigned"""
-        n = Rectangle(3, 5, 2, 8)
+        n = Rectangle(3, 5, 2, 8, 109)
 
-        self.assertEqual(n.id, 1)
+        self.assertEqual(n.id, 109)
         self.assertEqual(n.x, 2)
         self.assertEqual(n.width, 3)
         self.assertEqual(n.height, 5)
@@ -22,9 +22,9 @@ class TestRectangle(unittest.TestCase):
 
     def test_2_gets_sets(self):
         """Method checks setters and getters"""
-        r = Rectangle(7, 4, 9, 1)
+        r = Rectangle(7, 4, 9, 1, 111)
 
-        self.assertEqual(r.id, 2)
+        self.assertEqual(r.id, 111)
         r.id = 100
         self.assertEqual(r.id, 100)
         r.width = 39
@@ -87,8 +87,8 @@ class TestRectangle(unittest.TestCase):
         """Method checks the return of __str__"""
         r = Rectangle(4, 6, 2, 1, 12)
         self.assertEqual(r.__str__(), '[Rectangle] (12) 2/1 - 4/6')
-        r = Rectangle(5, 5, 1)
-        self.assertEqual(r.__str__(), '[Rectangle] (4) 1/0 - 5/5')
+        r = Rectangle(5, 5, 1, id=989)
+        self.assertEqual(r.__str__(), '[Rectangle] (989) 1/0 - 5/5')
         r = Rectangle(99, 88, id=101)
         self.assertEqual(r.__str__(), '[Rectangle] (101) 0/0 - 99/88')
 
@@ -120,8 +120,8 @@ class TestRectangle(unittest.TestCase):
         d = r.to_dictionary()
         jsn = Rectangle.to_json_string([d])
         self.assertTrue(type(jsn) is str)
-        self.assertEqual(jsn, '[
-                {"x": 5, "y": 2, "id": 101, "height": 3, "width": 8}]')
+        self.assertEqual(
+                jsn, '[{"x": 5, "y": 2, "id": 101, "height": 3, "width": 8}]')
         jsn = Rectangle.to_json_string(None)
         self.assertEqual(jsn, '[]')
         jsn = Rectangle.to_json_string([])
@@ -133,8 +133,8 @@ class TestRectangle(unittest.TestCase):
         Rectangle.save_to_file([r])
         with open('Rectangle.json', mode='r', encoding='utf=8') as file:
             content = file.read()
-        self.assertEqual(content, '[
-                {"x": 5, "y": 2, "id": 101, "height": 3, "width": 8}]')
+        self.assertEqual(
+            content, '[{"x": 5, "y": 2, "id": 101, "height": 3, "width": 8}]')
         os.remove('Rectangle.json')
 
         Rectangle.save_to_file([])

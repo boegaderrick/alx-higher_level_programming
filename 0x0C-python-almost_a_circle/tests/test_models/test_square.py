@@ -12,7 +12,7 @@ class TestSquare(unittest.TestCase):
         """Checks string representaion of object"""
         s = Square(50, 6, 3, 989)
         self.assertEqual(s.__str__(), '[Square] (989) 6/3 - 50')
-        s = Square(1, 1, 1)
+        s = Square(1, 1, 1, 1)
         self.assertEqual(s.__str__(), '[Square] (1) 1/1 - 1')
 
     def test_2_raises(self):
