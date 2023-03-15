@@ -4,6 +4,8 @@
 const arr = process.argv.slice(2);
 if (arr.length < 2) {
   console.log(0);
+} else if (arr.length === 2) {
+  console.log(arr.sort()[0]);
 } else {
   let largest = parseInt(arr[0]);
   for (let i = 0; i < arr.length; i++) {
