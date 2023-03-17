@@ -15,9 +15,8 @@ if __name__ == '__main__':
         cursor = db.cursor()
         cursor.execute('SELECT * FROM states\
                 WHERE name = "{:s}" ORDER BY states.id'.format(name))
-        print(cursor.fetchone())
-        #for r in cursor.fetchone():
-        #    print(r)
+        for r in cursor.fetchone():
+            print(r)
         cursor.close()
         db.close()
     except MySQLdb.Error as e:
