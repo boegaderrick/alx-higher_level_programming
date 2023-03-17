@@ -12,7 +12,7 @@ if __name__ == '__main__':
     try:
         db = MySQLdb.connect(host=h, port=p, user=u, passwd=pw, db=d)
         cursor = db.cursor()
-        cursor.execute('SELECT * FROM states ORDER BY states.id ASC')
+        cursor.execute('SELECT * FROM states ORDER BY states.id')
         print('\n'.join(str(r) for r in cursor.fetchall()))
         cursor.close()
         db.close()
