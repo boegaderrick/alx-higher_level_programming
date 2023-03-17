@@ -12,11 +12,13 @@ if __name__ == '__main__':
     try:
         db = MySQLdb.connect(host=h, port=p, user=u, passwd=pw, db=d)
         cursor = db.cursor()
-        query = 'SELECT * FROM states WHERE name LIKE "N%" ORDER BY states.id'
+        #query = 'SELECT * FROM states WHERE name LIKE "N%" ORDER BY states.id'
+        query = 'SELECT * FROM states ORDER BY states.id'
         cursor.execute(query)
         """print('\n'.join(str(r) for r in cursor.fetchall()))"""
         for r in cursor.fetchall():
-            print(r)
+            if (r[1].startswith('N')):
+                print(r)
         cursor.close()
         db.close()
     except MySQLdb.Error as e:
