@@ -13,7 +13,9 @@ if __name__ == '__main__':
         db = MySQLdb.connect(host=h, port=p, user=u, passwd=pw, db=d)
         cursor = db.cursor()
         cursor.execute('SELECT * FROM states ORDER BY states.id')
-        print('\n'.join(str(r) for r in cursor.fetchall()))
+        #print('\n'.join(str(r) for r in cursor.fetchall()))
+        for r in cursor.fetchall():
+            print(r)
         cursor.close()
         db.close()
     except MySQLdb.Error as e:
