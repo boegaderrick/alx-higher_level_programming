@@ -13,8 +13,8 @@ if __name__ == '__main__':
     try:
         db = MySQLdb.connect(host=h, port=p, user=u, passwd=pw, db=d)
         cursor = db.cursor()
-        cursor.execute('SELECT * FROM states\
-                WHERE name LIKE BINARY "{}" ORDER BY states.id'.format(name))
+        q = 'SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY states.id'
+        cursor.execute(q, (name,))
         for r in cursor.fetchall():
             print(r)
         cursor.close()
