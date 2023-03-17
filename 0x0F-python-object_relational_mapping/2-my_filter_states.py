@@ -15,7 +15,7 @@ if __name__ == '__main__':
         cursor = db.cursor()
         cursor.execute('SELECT * FROM states\
                 WHERE name = "{:s}" ORDER BY states.id'.format(name))
-        for r in cursor.fetchone():
+        for r in cursor.fetchall():
             print(r)
         cursor.close()
         db.close()
