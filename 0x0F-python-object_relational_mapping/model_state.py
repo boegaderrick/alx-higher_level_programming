@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module define a class mapped to a db"""
+"""This module define a class mapped to a db hello world hello world"""
 import SQLAlchemy
 import MySQLdb
 import sys
@@ -19,9 +19,7 @@ Base = declarative_base()
 
 
 class State(Base):
-    """State class definition"""
+    """State class definition hello world hello world hello world"""
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
-
-Base.metadata.create_all(engine)
