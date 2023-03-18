@@ -4,14 +4,6 @@ import sys
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Integer, String, Column
 
-"""host = 'localhost'
-port = 3306
-user = sys.argv[1]
-password = sys.argv[2]
-database = sys.argv[3]
-
-string = f'mysql+mysqldb://{user}:{password}@{host}:{port}/{database}'
-engine = create_engine(string)"""
 Base = declarative_base()
 
 
