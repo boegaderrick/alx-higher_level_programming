@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """This module define a class mapped to a db"""
+import SQLAlchemy
 import MySQLdb
+import sys
 from sqlalchemy import create_engine, Sequence
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Integer, String, Column
-import sys
 
 host = 'localhost'
 port = 3306
