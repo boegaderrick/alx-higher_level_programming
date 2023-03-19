@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This module defines a city"""
-from model_state import Base, State
+from relationship_state import Base, State
 from sqlalchemy import Column, Integer, String, ForeignKey
 
 
