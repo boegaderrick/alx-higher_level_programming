@@ -1,3 +1,3 @@
 #!/bin/bash
-#This script curls a URL and displays body size only
+#This script sends a delete request to a url
 curl -s -X 'DELETE' "$1"
