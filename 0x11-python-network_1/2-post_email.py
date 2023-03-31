@@ -8,8 +8,8 @@ if __name__ == '__main__':
     import sys
     url = sys.argv[1]
     """data = f'email={sys.argv[2]}'.replace('@', '%40')"""
-    data = urlencode({'name': sys.argv[2]})
-    data = data.encode('utf-8')
+    data = urlencode({'email': sys.argv[2]})
+    data = data.encode()
     req = Request(url, data)
     with urlopen(req) as response:
-        print(response.read().decode('utf-8'))
+        print(response.read().decode())
