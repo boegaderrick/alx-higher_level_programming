@@ -9,7 +9,10 @@ if __name__ == '__main__':
     url = f'https://api.github.com/repos/{argv[2]}/{argv[1]}/commits'
     foo = get(url)
     foo = foo.json()
-    for i in range(10):
-        sha = foo[i].get('sha')
-        author = foo[i].get('commit').get('author').get('name')
-        print(f'{sha}: {author}')
+    try:
+        for i in range(10):
+            sha = foo[i].get('sha')
+            author = foo[i].get('commit').get('author').get('name')
+            print(f'{sha}: {author}')
+    except Exception:
+        pass
