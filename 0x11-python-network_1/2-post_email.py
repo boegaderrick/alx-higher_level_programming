@@ -7,8 +7,9 @@ if __name__ == '__main__':
     from urllib.parse import urlencode
     import sys
     url = sys.argv[1]
+    email = sys.argv[2]
     """data = f'email={sys.argv[2]}'.replace('@', '%40')"""
-    data = urlencode({'email': sys.argv[2]})
+    data = urlencode({'email': email})
     data = data.encode('utf-8')
     req = Request(url, data)
     with urlopen(req) as response:
