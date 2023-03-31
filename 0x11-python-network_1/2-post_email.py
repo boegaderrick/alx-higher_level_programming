@@ -4,7 +4,7 @@
 """
 if __name__ == '__main__':
     from urllib.request import urlopen, Request
-    """from urllib.parse import urlencode"""
+    from urllib.parse import urlencode
     import sys
     url = sys.argv[1]
     data = f'email={sys.argv[2]}'.replace('@', '%40')
