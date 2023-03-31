@@ -12,4 +12,4 @@ if __name__ == '__main__':
     data = data.encode()
     req = Request(url, data)
     with urlopen(req) as response:
-        print(response.read().decode())
+        print(response.read().decode('utf-8'))
