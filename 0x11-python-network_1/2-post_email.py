@@ -7,7 +7,6 @@ if __name__ == '__main__':
     from urllib.parse import urlencode
     import sys
     url = sys.argv[1]
-    """data = f'email={sys.argv[2]}'.replace('@', '%40')"""
     data = urlencode({'email': sys.argv[2]})
     data = data.encode('ascii')
     req = Request(url, data)
