@@ -5,11 +5,20 @@
 const request = require('request');
 const argv = require('process').argv;
 
-const url = argv[2].replace('films', 'people/18');
+const url = argv[2];
+const charUrl = argv[2].replace('films', 'people/18');
 request(url, (error, response, body) => {
   if (error) {
     console.log(error);
     return;
   }
-  console.log(JSON.parse(body).films.length);
+  const movies = JSON.parse(body).results;
+  let idx;
+  let count = 0;
+  for (idx in movies) {
+    if (movies[idx].characters.includes(charUrl)) {
+      count++;
+    }
+  }
+  console.log(count);
 });
