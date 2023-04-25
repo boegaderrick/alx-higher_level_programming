@@ -1,4 +1,5 @@
 #!/usr/bin/node
+/* This script reads a file and outputs its contents */
 const fs = require('fs');
 const argv = require('process').argv;
 
