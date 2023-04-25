@@ -21,7 +21,7 @@ request(url, (error, response, body) => {
    * if (movies[idx].characters.includes(charUrl)) {
    *   count++;
    * }
-  }*
+   *}
    */
   for (idx in movies) {
     characters = movies[idx].characters;
