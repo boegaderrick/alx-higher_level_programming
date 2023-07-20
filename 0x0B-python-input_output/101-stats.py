@@ -22,7 +22,8 @@ if __name__ == '__main__':
                 exit(0)
             splitLine = line.split(' ')
             if len(splitLine) < 9:
-                continue
+                if not all(i in splitLine for i in ['"GET', 'HTTP/1.1"']):
+                    continue
 
             fileSize, code = fileSize + int(splitLine[-1]), splitLine[-2]
             if not code.isdecimal():
